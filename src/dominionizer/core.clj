@@ -9,7 +9,13 @@
   (set (take n (shuffle s))))
 
 (def expansions
-  (edn/read-string (slurp (io/resource "cards.edn"))))
+  (let [expansions (edn/read-string (slurp (io/resource "cards.edn")))]
+    (reduce-kv (fn [accum expansion cards]
+                 (->> cards
+                      (mapv (fn [card] (assoc card :expansion expansion)))
+                      (assoc accum expansion)))
+               {}
+               expansions)))
 
 (defn sample-from-expansion
   [expansion n]
@@ -61,6 +67,21 @@
                {}
                expansions)))
 
+(defn sample-extras
+  [samples]
+  (let [young-witch? (some (fn [card] (= "Young Witch" (:name card)))
+                           (get samples "Cornucopia"))
+        bane (when young-witch?
+               (->> (reduce into (vals expansions))
+                    (filter (fn [card]
+                              (let [[coins potions] (:cost card)]
+                                (and (= 0 potions)
+                                     (or (= 2 coins) (= 3 coins))))))
+                    (remove (reduce into #{} (vals samples)))
+                    rand-nth))]
+    (when bane
+      {(:expansion bane) #{(assoc bane :extras #{:bane})}})))
+
 (def standard-rules
   {:total 10
    :minimums {:alchemy 3
@@ -74,5 +95,14 @@
   (let [{:keys [total minimums cores expansions expansion-count]} rules
         expansions (choose expansion-count expansions)
         samples (sample-from-expansions total minimums expansions)
-        cores (sample-cores cores samples)]
-    (merge-with into cores samples)))
+        cores (sample-cores cores samples)
+        extras (sample-extras samples)
+        all (merge-with into cores samples extras)]
+    (reduce-kv (fn [accum expansion cards]
+                 (let [names (mapv (fn [card] (select-keys card #{:name :extras}))
+                                   (sort-by :name cards))]
+                   (cond-> accum
+                           (seq names)
+                           (assoc expansion names))))
+               {}
+               all)))
