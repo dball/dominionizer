@@ -854,4 +854,18 @@
    {:name "Storeroom" :types #{:action}}
    {:name "Urchin/Knights" :types #{:action :attack}}
    {:name "Vagrant" :types #{:action}}
-   {:name "Wandering Minstrel" :types #{:action}}}}
+   {:name "Wandering Minstrel" :types #{:action}}}
+ "Guilds"
+ #{{:name "Advisor" :types #{:action}}
+   {:name "Baker" :types #{:action}}
+   {:name "Butcher" :types #{:action}}
+   {:name "Candlestick Maker" :types #{:action}}
+   {:name "Doctor" :types #{:action}}
+   {:name "Herald" :types #{:action}}
+   {:name "Journeyman" :types #{:action}}
+   {:name "Masterpiece" :types #{:treasure}}
+   {:name "Merchant Guild" :types #{:action}}
+   {:name "Plaza" :types #{:action}}
+   {:name "Soothsayer" :types #{:action :attack}}
+   {:name "Stonemason" :types #{:action}}
+   {:name "Taxman" :types #{:action :attack}}}}
