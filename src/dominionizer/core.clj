@@ -67,12 +67,17 @@
                {}
                expansions)))
 
-(defn sample-extras
+(defn has-card?
+  [samples expansion card-name]
+  (some (fn [card] (= card-name (:name card)))
+        (get samples expansion)))
+
+(defn sample-young-witch
   [samples]
-  (let [young-witch? (some (fn [card] (= "Young Witch" (:name card)))
-                           (get samples "Cornucopia"))
+  (let [young-witch? (has-card? samples "Cornucopia" "Young Witch")
+        basis (reduce into (map expansions (keys samples)))
         bane (when young-witch?
-               (->> (reduce into (vals expansions))
+               (->> basis
                     (filter (fn [card]
                               (let [[coins potions] (:cost card)]
                                 (and (= 0 potions)
@@ -81,6 +86,23 @@
                     rand-nth))]
     (when bane
       {(:expansion bane) #{(assoc bane :extras #{:bane})}})))
+
+(defn sample-tournament
+  [samples]
+  (let [tournament? (has-card? samples "Cornucopia" "Tournament")
+        prizes (when tournament?
+                 (->> (get expansions "Cornucopia")
+                      (filter (comp :prize :types))
+                      (mapv (fn [card]
+                              (assoc card :extras #{:prize})))))]
+    (when prizes
+      {"Cornucopia" (set prizes)})))
+
+(defn sample-extras
+  [samples]
+  (merge-with (fnil into #{})
+              (sample-young-witch samples)
+              (sample-tournament samples)))
 
 (def standard-rules
   {:total 10
