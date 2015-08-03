@@ -42,7 +42,20 @@
 
 (defn sample-cores
   [cores samples]
-  (let [cores (cond-> cores (samples "Alchemy") (conj :alchemy))]
+  (let [chances (reduce-kv (fn [accum expansion cards]
+                             (into accum (repeat (count cards) expansion)))
+                           []
+                           samples)
+        big-money? (= "Prosperity" (rand-nth chances))
+        shelters? (= "Dark Ages" (rand-nth chances))
+        alchemy? (samples "Alchemy")
+        cores (cond-> cores
+                      big-money?
+                      (conj :big-money)
+                      shelters?
+                      (conj :shelters)
+                      alchemy?
+                      (conj :alchemy))]
     (reduce-kv (fn [accum expansion cards]
                  (assoc accum expansion (set (filter (comp cores :core) cards))))
                {}

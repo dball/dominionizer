@@ -641,8 +641,8 @@
    :cost [8 0],
    :text
    "During your Buy phase, this costs 2 Coins less per Action card you have in play, but not less than 0."}
-  {:name "Platinum", :types #{:treasure}, :cost [9 0], :text nil}
-  {:name "Colony", :types #{:victory}, :cost [11 0], :text nil}],
+  {:name "Platinum", :types #{:treasure}, :cost [9 0], :text nil :core :big-money}
+  {:name "Colony", :types #{:victory}, :cost [11 0], :text nil :core :big-money}],
  "Seaside"
  [{:name "Embargo",
    :types #{},
