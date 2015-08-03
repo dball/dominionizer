@@ -1,0 +1,766 @@
+{"Alchemy"
+ [{:name "Transmute",
+   :types #{:action},
+   :cost [1 1],
+   :text
+   "Trash a card from your hand. If it is an...Action card, gain a Duchy; Treasure card, gain a Transmute; or Victory card, gain a Gold."}
+  {:name "Apothecary",
+   :types #{:action},
+   :cost [2 1],
+   :text
+   "Reveal the top 4 cards of your deck.  Put the revealed Coppers and Potions into your hand. Put the other cards back on top of your deck in any order."}
+  {:name "Herbalist",
+   :types #{:action},
+   :cost [2 0],
+   :text
+   "When you discard this from play, you may put one of your Treasures from play on top of your deck."}
+  {:name "Scrying Pool",
+   :types #{:action :attack},
+   :cost [2 1],
+   :text
+   "Each player (including you) reveals the top card of his deck and either discards it or puts it back, your choice. Then, reveal cards from your deck until you reveal a card that is not an action. Take all of these revealed cards into your hand."}
+  {:name "University",
+   :types #{:action},
+   :cost [2 1],
+   :text "You may gain an Action card costing up to 5 Coins."}
+  {:name "Alchemist",
+   :types #{:action},
+   :cost [3 1],
+   :text
+   "When you discard this from play, you may put this on top of your deck if you have a Potion in play."}
+  {:name "Familiar",
+   :types #{:action :attack},
+   :cost [3 1],
+   :text "Each other player gains a Curse."}
+  {:name "Philosopher's Stone",
+   :types #{:treasure},
+   :cost [3 1],
+   :text
+   "When you play this card, count your deck and discard pile. Worth 1 Coin per 5 cards total between them (rounded down)."}
+  {:name "Golem",
+   :types #{:action},
+   :cost [4 1],
+   :text
+   "Reveal cards from your deck until you reveal 2 Action cards other than Golem cards. Discard the other cards, then play the Action cards in either order."}
+  {:name "Potion",
+   :types #{:treasure},
+   :cost [4 0],
+   :text "+1 Potion."
+   :core :alchemy}
+  {:name "Apprentice",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "Trash a card from your hand. +1 Card per Coin it costs.  +2 Cards if there is a Potion in the cost."}
+  {:name "Possession",
+   :types #{:action},
+   :cost [6 1],
+   :text
+   "The player to your left takes an extra turn after this one, in which you can see all cards he can and make all decisions for him. Any cards he would gain on that turn, you gain instead; any cards of his that are trashed are set aside and returned to his discard pile at the end of the turn."}
+  {:name "Vineyard",
+   :types #{:victory},
+   :cost [0 1],
+   :text
+   "Worth 1VP for every 3 Action cards in your deck (rounded down)."}],
+ "Cornucopia"
+ [{:name "Bag of Gold",
+   :types #{:action :prize},
+   :cost [0 0],
+   :text
+   "Gain a Gold, putting it on top of your deck. (This is not in the Supply.)"
+   :supply false}
+  {:name "Diadem",
+   :types #{:treasure :prize},
+   :cost [0 0],
+   :text
+   "When you play this, +$1 per unused Action you have (Action, not Action card). (This is not in the Supply.)\n"
+   :supply false}
+  {:name "Followers",
+   :types #{:attack :action :prize},
+   :cost [0 0],
+   :text
+   "Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand. (This is not in the Supply.)"
+   :supply false}
+  {:name "Princess",
+   :types #{:action :prize},
+   :cost [0 0],
+   :text
+   "While this is in play, cards cost $2 less, but not less than $0. (This is not in the Supply.)"
+   :supply false}
+  {:name "Trusty Steed",
+   :types #{:action :prize},
+   :cost [0 0],
+   :text
+   "Choose two: +2 Cards; or +2 Actions; or +$2; or gain 4 Silvers and put your deck into your discard pile. (This is not in the Supply.)"
+   :supply false}
+  {:name "Hamlet",
+   :types #{:action},
+   :cost [2 0],
+   :text
+   "You may discard a card; If you do, +1 Action. \nYou may discard a card; If you do, +1 Buy."}
+  {:name "Fortune Teller",
+   :types #{:attack :action},
+   :cost [3 0],
+   :text
+   "Each other player reveals cards from the top of his deck until he reveals a Victory or Curse card. He puts it on top and discards the other revealed cards."}
+  {:name "Menagerie",
+   :types #{:action},
+   :cost [3 0],
+   :text
+   "Reveal your hand. If there are no duplicate cards in it, +3 Cards.\nOtherwise, +1 Card."}
+  {:name "Farming Village",
+   :types #{:action},
+   :cost [4 0],
+   :text
+   "Reveal cards from the top of your deck until you reveal an Action or Treasure card. Put that card into your hand and discard the other cards."}
+  {:name "Horse Traders",
+   :types #{:reaction :action},
+   :cost [4 0],
+   :text
+   "Discard 2 cards. When another player plays an Attack card, you may set this aside from your hand. If you do, then at the start of your next turn, +1 Card and return this to your hand."}
+  {:name "Remake",
+   :types #{:action},
+   :cost [4 0],
+   :text
+   "Do this twice: Trash a card from your hand then gain a card costing exactly 1 more than the trashed card."}
+  {:name "Tournament",
+   :types #{:action},
+   :cost [4 0],
+   :text
+   "Each player may reveal a Province from his hand. If you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck. If no-one else does, +1 Card +1 Coin."}
+  {:name "Young Witch",
+   :types #{:attack :action},
+   :cost [4 0],
+   :text
+   "Discard 2 cards. Each other player may reveal a Bane card from his hand.\nIf he doesn't, he gains a Curse. Setup: Add an extra Kingdom card pile costing 2 or 3 to the Supply. Cards from that pile are Bane cards."}
+  {:name "Harvest",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "Reveal the top 4 cards of your deck, then discard them. +1 Coin per differently named card revealed."}
+  {:name "Horn of Plenty",
+   :types #{:treasure},
+   :cost [5 0],
+   :text
+   "When you play this, gain a card costing up to 1 Coin per differently named card you have in play, counting this. If it's a Victory card, trash this."}
+  {:name "Hunting Party",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "Reveal your hand. Reveal cards from your deck until you reveal a card that isn't a duplicate of one in your hand and discard the rest."}
+  {:name "Jester",
+   :types #{:attack :action},
+   :cost [5 0],
+   :text
+   "Each other player discards the top card of his deck. If it's a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice."}
+  {:name "Fairgrounds",
+   :types #{:victory},
+   :cost [6 0],
+   :text
+   "Worth 2 VP for every 5 differnly named cards in your deck (rounded down)."}],
+ "Dominion"
+ [{:name "Copper", :types #{:treasure}, :cost [0 0], :text nil :core true}
+  {:name "Curse", :types #{:curse}, :cost [0 0], :text nil :core :curse}
+  {:name "Cellar",
+   :types #{:action},
+   :cost [2 0],
+   :text "Discard any number of cards. +1 Card per card discarded."}
+  {:name "Chapel",
+   :types #{:action},
+   :cost [2 0],
+   :text "Trash up to 4 cards from your hand."}
+  {:name "Estate", :types #{:victory}, :cost [2 0], :text nil :core true}
+  {:name "Moat",
+   :types #{:reaction :action},
+   :cost [2 0],
+   :text
+   "When another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack."}
+  {:name "Chancellor",
+   :types #{:action},
+   :cost [3 0],
+   :text "You may immediately put your deck into your discard pile."}
+  {:name "Silver", :types #{:treasure}, :cost [3 0], :text nil :core true}
+  {:name "Village", :types #{:action}, :cost [3 0], :text nil}
+  {:name "Woodcutter", :types #{:action}, :cost [3 0], :text nil}
+  {:name "Workshop",
+   :types #{:action},
+   :cost [3 0],
+   :text "Gain a card costing up to 4 Coins."}
+  {:name "Bureaucrat",
+   :types #{:attack},
+   :cost [4 0],
+   :text
+   "Gain a Silver card; put it on top of your deck. Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards)."}
+  {:name "Feast",
+   :types #{:action},
+   :cost [4 0],
+   :text "Trash this card. Gain a card costing  up to 5 Coins."}
+  {:name "Gardens",
+   :types #{:victory},
+   :cost [4 0],
+   :text "Worth 1VP for every 10 cards in your deck (rounded down)."}
+  {:name "Militia",
+   :types #{:attack :action},
+   :cost [4 0],
+   :text "Each other player discards down to 3 cards in his hand."}
+  {:name "Moneylender",
+   :types #{:action},
+   :cost [4 0],
+   :text "Trash a Copper card from your hand. If you do, +3 Coins."}
+  {:name "Remodel",
+   :types #{:action},
+   :cost [4 0],
+   :text
+   "Trash a card from your hand. Gain a card costing up to 2 Coins more than the trashed card."}
+  {:name "Smithy", :types #{:action}, :cost [4 0], :text nil}
+  {:name "Spy",
+   :types #{:action :attack},
+   :cost [4 0],
+   :text
+   "Each player (including you) reveals the top card of his deck and either discards it or puts it back, your choice."}
+  {:name "Thief",
+   :types #{:attack :action},
+   :cost [4 0],
+   :text
+   "Each other player reveals the top 2 cards of his deck. If they revealed any Treasure cards, they trash one of them that you choose. You may gain any or all of these trashed cards. They discard the other revealed cards."}
+  {:name "Throne Room",
+   :types #{:action},
+   :cost [4 0],
+   :text "Choose an Action card in your  hand. Play it twice."}
+  {:name "Council Room",
+   :types #{:action},
+   :cost [5 0],
+   :text "Each other player draws a card."}
+  {:name "Duchy", :types #{:victory}, :cost [5 0], :text nil :core true}
+  {:name "Festival", :types #{:action}, :cost [5 0], :text nil}
+  {:name "Laboratory", :types #{:action}, :cost [5 0], :text nil}
+  {:name "Library",
+   :types #{},
+   :cost [5 0],
+   :text
+   "Draw until you have 7 cards in hand. You may set aside any Action cards drawn this way, as you draw them; discard the set aside cards after you finish drawing."}
+  {:name "Market", :types #{:action}, :cost [5 0], :text nil}
+  {:name "Mine",
+   :types #{},
+   :cost [5 0],
+   :text
+   "Trash a Treasure card from your hand. Gain a Treasure card costing up to 3 more; put it into your hand."}
+  {:name "Witch",
+   :types #{:attack},
+   :cost [5 0],
+   :text "Each other player gains a Curse card."}
+  {:name "Adventurer",
+   :types #{},
+   :cost [6 0],
+   :text
+   "Reveal cards from your deck until you reveal 2 Treasure  cards. Put those Treasure cards into your hand and discard the other revealed cards."}
+  {:name "Gold", :types #{:treasure}, :cost [6 0], :text nil :core true}
+  {:name "Province", :types #{:victory}, :cost [8 0], :text nil :core true}],
+ "Hinterlands"
+ [{:name "Crossroads",
+   :types #{},
+   :cost [2 0],
+   :text
+   "Reveal your hand. +1 per Victory card revealed. If this is the first time you played a Crossroads this turn, +3 Actions."}
+  {:name "Duchess",
+   :types #{},
+   :cost [2 0],
+   :text
+   "Each player (including you) looks at the top card of his deck, and discards it or puts it back. In games using this, when you gain a Duchy, you may gain a Duchess."}
+  {:name "Fool's Gold",
+   :types #{:treasure :reaction},
+   :cost [2 0],
+   :text
+   "If this is the first time you played a Fool's Gold this turn, this is worth 1 Coin, otherwise it's worth 4 Coins. When another player gains a Province, you may trash this from your hand. If you do, gain a Gold, putting it on your deck."}
+  {:name "Develop",
+   :types #{},
+   :cost [3 0],
+   :text
+   "Trash a card from your hand. Gain a card costing exactly 1 Coin more than it and a card costing exactly 1 Coin less than it, in either order, putting them on top of your deck."}
+  {:name "Oasis",
+   :types #{:action},
+   :cost [3 0],
+   :text "Discard a card."}
+  {:name "Oracle",
+   :types #{:attack},
+   :cost [3 0],
+   :text
+   "Each player (including you) reveals the top 2 cards of his deck, and you choose one: either he discards them, or he puts them back on top in an order he chooses. +2 Cards."}
+  {:name "Scheme",
+   :types #{:action},
+   :cost [3 0],
+   :text
+   "At the start of Clean-up this turn, you may choose an Action card you have in play. If you discard it from play this turn, put it on your deck."}
+  {:name "Tunnel",
+   :types #{:victory :reaction},
+   :cost [3 0],
+   :text
+   "When you discard this other than during a Clean-up phase, you may reveal it. If you do, gain a Gold."}
+  {:name "Jack of All Trades",
+   :types #{},
+   :cost [4 0],
+   :text
+   "Gain a Silver. Look at the top card of your deck; discard it or put it back. Draw until you have 5 cards in hand. You may trash a card from your hand that is not a Treasure."}
+  {:name "Noble Brigand",
+   :types #{:attack},
+   :cost [4 0],
+   :text
+   "When you buy this or play it, each other player reveals the top 2 cards of his deck, trashes a revealed Silver or Gold you choose, and discards the rest. If he didn't reveal a Treasure, he gains a Copper. You gain the trashed cards."}
+  {:name "Nomad Camp",
+   :types #{},
+   :cost [4 0],
+   :text "When you gain this, put it on top of your deck."}
+  {:name "Silk Road",
+   :types #{:victory},
+   :cost [4 0],
+   :text
+   "Worth 1 VP for every 4 Victory cards in your deck (round down)."}
+  {:name "Spice Merchant",
+   :types #{},
+   :cost [4 0],
+   :text
+   "You may trash a Treasure from your hand. If you do, choose one:\n+2 Cards and +1 Action; or +$2 and +1 Buy."}
+  {:name "Trader",
+   :types #{:reaction},
+   :cost [4 0],
+   :text
+   "Trash a card from your hand. Gain a number of Silvers equal to its cost in coins. When you would gain a card, you may reveal this from your hand. If you do, instead, gain a Silver."}
+  {:name "Cache",
+   :types #{:treasure},
+   :cost [5 0],
+   :text "When you gain this, gain two Coppers."}
+  {:name "Cartographer",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "Look at the top 4 cards of your deck. Discard any number of them. Put the rest back on top in any order."}
+  {:name "Embassy",
+   :types #{},
+   :cost [5 0],
+   :text
+   "Discard 3 cards. When you gain this, each other player gains a Silver."}
+  {:name "Haggler",
+   :types #{},
+   :cost [5 0],
+   :text
+   "While this is in play, when you buy a card, gain a card costing less than it that is not a Victory card."}
+  {:name "Highway",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "While this is in play, cards cost $1 less, but not less than $0."}
+  {:name "Ill-Gotten Gains",
+   :types #{:treasure},
+   :cost [5 0],
+   :text
+   "When you play this, you may gain a Copper, putting it into your hand. When you gain this, each other player gains a Curse."}
+  {:name "Inn",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "Discard 2 cards. When you gain this, look through your discard pile (including this), reveal any number of Action cards from it, and shuffle them into your deck."}
+  {:name "Mandarin",
+   :types #{},
+   :cost [5 0],
+   :text
+   "Put a card from your hand on top of your deck. When you gain this, put all Treasures you have in play on top of your deck in any order."}
+  {:name "Margrave",
+   :types #{:attack},
+   :cost [5 0],
+   :text
+   "Each other player draws a card, then discards down to 3 cards in hand."}
+  {:name "Stables",
+   :types #{},
+   :cost [5 0],
+   :text
+   "You may discard a Treasure. If you do, +3 Cards and +1 Action."}
+  {:name "Border Village",
+   :types #{:action},
+   :cost [6 0],
+   :text "When you gain this, gain a card costing less than this."}
+  {:name "Farmland",
+   :types #{:victory},
+   :cost [6 0],
+   :text
+   "When you buy this, trash a card from your hand. Gain a card costing exactly $2 more than the trashed card."}],
+ "Intrigue"
+ [{:name "Courtyard",
+   :types #{},
+   :cost [2 0],
+   :text "Put a card from your hand on top of your deck."}
+  {:name "Pawn",
+   :types #{},
+   :cost [2 0],
+   :text
+   "Choose two: +1 Card; +1 Action; +1 Buy; +1 Coin. (The choices must be different.)"}
+  {:name "Secret Chamber",
+   :types #{:reaction},
+   :cost [2 0],
+   :text
+   "Discard any number of cards. +1 Coin per card discarded. When another player plays an Attack card, you may reveal this card from your hand. If you do, +2 Cards, then put 2 cards from your hand to the top of your deck."}
+  {:name "Great Hall",
+   :types #{:victory :action},
+   :cost [3 0],
+   :text nil}
+  {:name "Masquerade",
+   :types #{},
+   :cost [3 0],
+   :text
+   "Each player passes a card from his hand o the left once. Then you may trash a card from your hand."}
+  {:name "Shanty Town",
+   :types #{:action},
+   :cost [3 0],
+   :text
+   "Reveal your hand. If you have no Action cards in hand, +2 Cards."}
+  {:name "Steward",
+   :types #{},
+   :cost [3 0],
+   :text
+   "Choose one: +2 Cards; or +2 Coins; or trash 2 cards from your hand."}
+  {:name "Swindler",
+   :types #{:attack},
+   :cost [3 0],
+   :text
+   "Each other player trashes the top card of his deck and gains a card with the same cost that you choose."}
+  {:name "Wishing Well",
+   :types #{:action},
+   :cost [3 0],
+   :text
+   "Name a card. Reveal the top card of your deck. If it's the named card, put it into your hand."}
+  {:name "Baron",
+   :types #{},
+   :cost [4 0],
+   :text
+   "You may discard an Estate card.  If you do, +4 Coins. Otherwise, gain an Estate card."}
+  {:name "Bridge",
+   :types #{},
+   :cost [4 0],
+   :text
+   "All cards (including cards in players' hands) cost 1 Coin less this turn, but not less than 0."}
+  {:name "Conspirator",
+   :types #{},
+   :cost [4 0],
+   :text
+   "If you've played 3 or more Actions this turn (counting this): +1 Card, +1 Action."}
+  {:name "Coppersmith",
+   :types #{},
+   :cost [4 0],
+   :text "Copper produces an extra 1 Coin this turn."}
+  {:name "Ironworks",
+   :types #{},
+   :cost [4 0],
+   :text
+   "Gain a card costing up to 4 Coins. If it is an Action card, +1 Action; Treasure card, +1 Coin; or Victory card, +1 Card."}
+  {:name "Mining Village",
+   :types #{:action},
+   :cost [4 0],
+   :text "You may trash this card immediately. If you do, +2 Coins."}
+  {:name "Scout",
+   :types #{:action},
+   :cost [4 0],
+   :text
+   "Reveal the top 4 cards of your deck. Put the revealed Victory cards into your hand. Put the other cards on top of your deck in any order."}
+  {:name "Duke",
+   :types #{:victory},
+   :cost [5 0],
+   :text "Worth 1VP per Duchy you have."}
+  {:name "Minion",
+   :types #{:action :attack},
+   :cost [5 0],
+   :text
+   "Choose one: +2 Coins; or discard your hand, +4 Cards, and each other player with at least 5 cards in hand discards his hand and draws 4 cards."}
+  {:name "Saboteur",
+   :types #{:attack},
+   :cost [5 0],
+   :text
+   "Each other player reveals cards from the top of his deck until revealing one costing 3 Coins or more. He trashes that card and may gain a card costing at most 2 less than it. He discards the other revealed cards."}
+  {:name "Torturer",
+   :types #{:attack},
+   :cost [5 0],
+   :text
+   "Each other player chooses one: he discards 2 cards; or he gains a Curse card, putting it in his hand."}
+  {:name "Trading Post",
+   :types #{},
+   :cost [5 0],
+   :text
+   "Trash 2 cards from your hand. If you do, gain a Silver card; put it into your hand."}
+  {:name "Tribute",
+   :types #{},
+   :cost [5 0],
+   :text
+   "The player to your left reveals then discards the top 2 cards of his deck. For each differently named card revealed, if it is an…Action card, +2 Actions; Treasure card, +2 Coins; or Victory card, +2 Cards."}
+  {:name "Upgrade",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "Trash a card from your hand. Gain a card costing exactly 1 Coin more than it."}
+  {:name "Harem", :types #{:victory :treasure}, :cost [6 0], :text nil}
+  {:name "Nobles",
+   :types #{:victory},
+   :cost [6 0],
+   :text "Choose one: +3 Cards; or +2 Actions."}],
+ "Promo"
+ [{:name "Black Market",
+   :types #{},
+   :cost [3 0],
+   :text
+   "Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order. (Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.)"}
+  {:name "Envoy",
+   :types #{},
+   :cost [4 0],
+   :text
+   "Reveal the top 5 cards of your deck. The player to your left chooses one for you to dicard. Draw the rest."}
+  {:name "Walled Village",
+   :types #{:action},
+   :cost [4 0],
+   :text
+   "At the start of Clean-up, if you have this and no more than one other Action card in play, you may put this on top of your deck."}
+  {:name "Governor",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "Choose one: you get the version in parentheses. Each player gets +1 (+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 (2) more."}
+  {:name "Stash",
+   :types #{:treasure},
+   :cost [5 0],
+   :text "When you shuffle, you may put this anywhere in your deck."}],
+ "Prosperity"
+ [{:name "Loan",
+   :types #{:treasure},
+   :cost [3 0],
+   :text
+   "When you play this, reveal cards from your deck until you reveal a Treasure. Discard it or trash it. Discard the other cards."}
+  {:name "Trade Route",
+   :types #{},
+   :cost [3 0],
+   :text
+   "+1 Coin per token on the Trade Route mat. Trash a card from your hand. Setup: Put a token on each Victory card Supply pile. When a card is gained from that pile, Move the token to the Trade Route mat."}
+  {:name "Watchtower",
+   :types #{:reaction},
+   :cost [3 0],
+   :text
+   "Draw until you have 6 cards in hand. --When you gain a card, you may reveal this from your hand. If you do, trash that card or put it on top of your deck."}
+  {:name "Bishop",
+   :types #{},
+   :cost [4 0],
+   :text
+   "+1VP. Trash a card from your hand. +VP equal to half its cost in coins, rounded down. Each other player may trash a card from his hand."}
+  {:name "Monument", :types #{}, :cost [4 0], :text "+1VP"}
+  {:name "Quarry",
+   :types #{:treasure},
+   :cost [4 0],
+   :text
+   "While this card is in play, Action cards cost 2 Coins less, but not less than 0 Coins."}
+  {:name "Talisman",
+   :types #{:treasure},
+   :cost [4 0],
+   :text
+   "While this card is in play, when you buy a card costing 4 Coins or less that is not a Victory card, gain a copy of it."}
+  {:name "Worker's Village", :types #{:action}, :cost [4 0], :text nil}
+  {:name "City",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "If there are one or more empty Supply piles, +1 Card. If there are two or more, +1 Coin and +1 Buy."}
+  {:name "Contraband",
+   :types #{:treasure},
+   :cost [5 0],
+   :text
+   "When you play this, the player to your  left names a card. You can't buy that card this turn."}
+  {:name "Counting House",
+   :types #{},
+   :cost [5 0],
+   :text
+   "Look through your discard pile, reveal any number of Copper cards from it, and put them into your hand."}
+  {:name "Mint",
+   :types #{},
+   :cost [5 0],
+   :text
+   "You may reveal a Treasure card from your hand. Gain a copy of it. When you buy this, trash all Treasures you have in play."}
+  {:name "Mountebank",
+   :types #{:attack},
+   :cost [5 0],
+   :text
+   "Each other player may discard a Curse. If he doesn't, he gains a Curse and a Copper."}
+  {:name "Rabble",
+   :types #{:attack},
+   :cost [5 0],
+   :text
+   "Each other player reveals the top 3 cards of his deck, discard the revealed Actions and Treasures, and puts the rest back on top in any order he chooses."}
+  {:name "Royal Seal",
+   :types #{:treasure},
+   :cost [5 0],
+   :text
+   "While this is in play, when you gain a card, you may put it on top of your deck."}
+  {:name "Vault",
+   :types #{},
+   :cost [5 0],
+   :text
+   "Discard any number of cards. +1 Coin per card discarded. Each other player may discard 2 cards. If he does, he draws a card."}
+  {:name "Venture",
+   :types #{:treasure},
+   :cost [5 0],
+   :text
+   "When you play this, reveal cards from your deck until you reveal a Treasure. Discard the other cards. Play that Treasure."}
+  {:name "Goons",
+   :types #{:attack},
+   :cost [6 0],
+   :text
+   "Each other player discards down to 3 cards in hand. --While this is in play, when you buy a card, +1VP."}
+  {:name "Grand Market",
+   :types #{:action},
+   :cost [6 0],
+   :text "You can't buy this if you have any Copper in play."}
+  {:name "Hoard",
+   :types #{:treasure},
+   :cost [6 0],
+   :text
+   "While this is in play, when you buy a Victory card, gain a Gold."}
+  {:name "Bank",
+   :types #{:treasure},
+   :cost [7 0],
+   :text
+   "When you play this, it's worth 1 Coin per Treasure card you have in play (counting this)."}
+  {:name "Expand",
+   :types #{},
+   :cost [7 0],
+   :text
+   "Trash a card from your hand. Gain a card costing up to 3 Coins more than the trashed card."}
+  {:name "Forge",
+   :types #{},
+   :cost [7 0],
+   :text
+   "Trash any number of cards from your hand. Gain a card with cost exactly equal to the total cost in coins of the trashed cards."}
+  {:name "King's Court",
+   :types #{},
+   :cost [7 0],
+   :text
+   "You may choose an Action card in your hand. Play it three times."}
+  {:name "Peddler",
+   :types #{:action},
+   :cost [8 0],
+   :text
+   "During your Buy phase, this costs 2 Coins less per Action card you have in play, but not less than 0."}
+  {:name "Platinum", :types #{:treasure}, :cost [9 0], :text nil}
+  {:name "Colony", :types #{:victory}, :cost [11 0], :text nil}],
+ "Seaside"
+ [{:name "Embargo",
+   :types #{},
+   :cost [2 0],
+   :text
+   "Trash this card. Put an Embargo token on top of a Supply pile. (When you buy a card with an Embargo token on it, gain a Curse)"}
+  {:name "Haven",
+   :types #{:duration :action},
+   :cost [2 0],
+   :text
+   "Set aside a card from your hand face down. At the start of your next turn, put it into your hand."}
+  {:name "Lighthouse",
+   :types #{:duration :action :reaction},
+   :cost [2 0],
+   :text
+   "Now and at the start of your next turn: +1 Coin. While this is in play, when another player plays an Attack card, it doesn't affect you."}
+  {:name "Native Village",
+   :types #{:action},
+   :cost [2 0],
+   :text
+   "Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand. You may look at the cards on your may at any time; return them to your deck at the end of the game."}
+  {:name "Pearl Diver",
+   :types #{:action},
+   :cost [2 0],
+   :text
+   "Look at the bottom card of your deck. You may put it on top."}
+  {:name "Ambassador",
+   :types #{:attack},
+   :cost [3 0],
+   :text
+   "Reveal a card from your hand.  Return up to 2 copies of it from your hand to the Supply.  Then each player gains a copy of it."}
+  {:name "Fishing Village",
+   :types #{:duration :action},
+   :cost [3 0],
+   :text "At the start of your next turn: +1 Action, +1 Coin."}
+  {:name "Lookout",
+   :types #{:action},
+   :cost [3 0],
+   :text
+   "Look at the top 3 cards of your deck. Trash one of them. Discard one of them. Put the other one on top of your deck."}
+  {:name "Smugglers",
+   :types #{},
+   :cost [3 0],
+   :text
+   "Gain a copy of a card costing up to 6 Coins that the player to your right gained on his last turn."}
+  {:name "Warehouse",
+   :types #{:action},
+   :cost [3 0],
+   :text "Discard 3 cards."}
+  {:name "Caravan",
+   :types #{:duration :action},
+   :cost [4 0],
+   :text "At the start of your next turn, +1 Card."}
+  {:name "Cutpurse",
+   :types #{:attack},
+   :cost [4 0],
+   :text
+   "Each other player discards a Copper card (or reveals a hand with no Copper)."}
+  {:name "Island",
+   :types #{:victory},
+   :cost [4 0],
+   :text
+   "Set aside this and another card from your hand. Return them to your deck at the end of the game."}
+  {:name "Navigator",
+   :types #{},
+   :cost [4 0],
+   :text
+   "Look at the top 5 cards of your deck. Either discard all of them, or put them back on top of your deck in any order."}
+  {:name "Pirate Ship",
+   :types #{:attack},
+   :cost [4 0],
+   :text
+   "Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or +1 Coin per Coin token you've taken with Pirate Ships this game."}
+  {:name "Salvager",
+   :types #{},
+   :cost [4 0],
+   :text "Trash a card from your  hand. +Coins equal to its cost."}
+  {:name "Sea Hag",
+   :types #{:attack},
+   :cost [4 0],
+   :text
+   "Each other player discards the top card of his deck, then gains a Curse card, putting it on top of his deck."}
+  {:name "Treasure Map",
+   :types #{},
+   :cost [4 0],
+   :text
+   "Trash this and another copy of Treasure Map from your hand. If you do trash two Treasure Maps, gain 4 Gold cards, putting them on top of your deck."}
+  {:name "Bazaar", :types #{:action}, :cost [5 0], :text nil}
+  {:name "Explorer",
+   :types #{},
+   :cost [5 0],
+   :text
+   "You may reveal a Province card from your hand. If you do, gain a Gold card, putting it into your hand. Otherwise, gain a Silver card, putting it into your hand."}
+  {:name "Ghost Ship",
+   :types #{:attack},
+   :cost [5 0],
+   :text
+   "Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand."}
+  {:name "Merchant Ship",
+   :types #{:duration},
+   :cost [5 0],
+   :text "Now and at the start of your next turn: +2 Coins."}
+  {:name "Outpost",
+   :types #{:duration},
+   :cost [5 0],
+   :text
+   "You only draw 3 cards (instead of 5) in this turn's Clean-up phase. Take an extra turn after this one. This can't cause you to take more than two consecutive  turns."}
+  {:name "Tactician",
+   :types #{:duration},
+   :cost [5 0],
+   :text
+   "Discard your hand. If you discarded any cards this way, then at the start of your  next turn, +5 Cards, +1 Buy, and +1 Action."}
+  {:name "Treasury",
+   :types #{:action},
+   :cost [5 0],
+   :text
+   "When you discard this from play, if you didn't buy a Victory card this turn, you may put this on top of your deck."}
+  {:name "Wharf",
+   :types #{:duration},
+   :cost [5 0],
+   :text "Now and at the start of your next turn: +2 Cards, +1 Buy."}]}
