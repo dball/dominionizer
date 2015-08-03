@@ -763,4 +763,55 @@
   {:name "Wharf",
    :types #{:duration},
    :cost [5 0],
-   :text "Now and at the start of your next turn: +2 Cards, +1 Buy."}]}
+   :text "Now and at the start of your next turn: +2 Cards, +1 Buy."}]
+ "Adventures"
+ #{{:name "Amulet"}
+   {:name "Artificer"}
+   {:name "Bridge Troll"}
+   {:name "Caravan Guard"}
+   {:name "Coin of the Realm"}
+   {:name "Distant Lands"}
+   {:name "Dungeon"}
+   {:name "Duplicate"}
+   {:name "Gear"}
+   {:name "Giant"}
+   {:name "Guide"}
+   {:name "Haunted Woods"}
+   {:name "Hireling"}
+   {:name "Lost City"}
+   {:name "Magpie"}
+   {:name "Messenger"}
+   {:name "Miser"}
+   {:name "Page" :types #{:traveller}}
+   {:name "Peasant" :types #{:traveller}}
+   {:name "Port"}
+   {:name "Ranger"}
+   {:name "Ratcatcher"}
+   {:name "Raze"}
+   {:name "Relic"}
+   {:name "Royal Carriage"}
+   {:name "Storyteller"}
+   {:name "Swamp Hag"}
+   {:name "Transmogrify"}
+   {:name "Treasure Trove"}
+   {:name "Wine Merchant"}
+   {:name "Alms" :types #{:event}}
+   {:name "Ball" :types #{:event}}
+   {:name "Bonfire" :types #{:event}}
+   {:name "Borrow" :types #{:event}}
+   {:name "Expedition" :types #{:event}}
+   {:name "Ferry" :types #{:event}}
+   {:name "Inheritance" :types #{:event}}
+   {:name "Lost Arts" :types #{:event}}
+   {:name "Mission" :types #{:event}}
+   {:name "Pathfinding" :types #{:event}}
+   {:name "Pilgrimage" :types #{:event}}
+   {:name "Plan" :types #{:event}}
+   {:name "Quest" :types #{:event}}
+   {:name "Raid" :types #{:event}}
+   {:name "Save" :types #{:event}}
+   {:name "Scouting Party" :types #{:event}}
+   {:name "Seaway" :types #{:event}}
+   {:name "Trade" :types #{:event}}
+   {:name "Training" :types #{:event}}
+   {:name "Travelling Fair" :types #{:event}}}}
