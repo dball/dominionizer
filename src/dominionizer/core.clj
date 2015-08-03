@@ -21,10 +21,9 @@
   [expansion n]
   (let [candidates (->> (get expansions expansion)
                         (remove :core)
-                        (remove #(= false (:supply %))))]
+                        (remove #(= false (:supply %)))
+                        (remove (comp :event :types)))]
     (choose n candidates)))
-
-(def alchemy-minimum 3)
 
 (defn minimum-for-expansion
   [minimums expansion]
@@ -98,11 +97,26 @@
     (when prizes
       {"Cornucopia" (set prizes)})))
 
+(defn sample-events
+  [samples]
+  (let [adventure? (seq (samples "Adventures"))
+        basis (reduce into (map expansions (keys samples)))
+        events (when adventure?
+                 (->> basis
+                      shuffle
+                      (take 10)
+                      (filter (comp :event :types))
+                      (take 2)
+                      (map (fn [card] (assoc card :extras #{:event})))))]
+    (when (seq events)
+      {"Adventures" (set events)})))
+
 (defn sample-extras
   [samples]
   (merge-with (fnil into #{})
               (sample-young-witch samples)
-              (sample-tournament samples)))
+              (sample-tournament samples)
+              (sample-events samples)))
 
 (def standard-rules
   {:total 10
