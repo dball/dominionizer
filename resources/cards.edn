@@ -814,4 +814,44 @@
    {:name "Seaway" :types #{:event}}
    {:name "Trade" :types #{:event}}
    {:name "Training" :types #{:event}}
-   {:name "Travelling Fair" :types #{:event}}}}
+   {:name "Travelling Fair" :types #{:event}}}
+ "Dark Ages"
+ #{{:name "Altar" :types #{:action}}
+   {:name "Armory" :types #{:action}}
+   {:name "Band of Misfits" :types #{:action}}
+   {:name "Bandit Camp" :types #{:action} :requires #{"Spoils"}}
+   {:name "Beggar" :types #{:action :reaction}}
+   {:name "Catacombs" :types #{:action}}
+   {:name "Count" :types #{:action}}
+   {:name "Counterfeit" :types #{:treasure}}
+   {:name "Cultist" :types #{:action :attack :looter}}
+   {:name "Death Cart" :types #{:action :looter}}
+   {:name "Feodum" :types #{:victory}}
+   {:name "Forager" :types #{:action}}
+   {:name "Fortress" :types #{:action}}
+   {:name "Graverobber" :types #{:action}}
+   {:name "Hermit" :types #{:action}}
+   {:name "Hunting Grounds" :types #{:action}}
+   {:name "Ironmonger" :types #{:action}}
+   {:name "Junk Dealer" :types #{:action}}
+   {:name "Madman" :types #{:action}}
+   {:name "Marauder" :types #{:action :attack :looter} :requires #{"Spoils"}}
+   {:name "Market Square" :types #{:action :reaction}}
+   {:name "Mercenary" :types #{:action :attack} :supply false}
+   {:name "Mystic" :types #{:action}}
+   {:name "Pillage" :types #{:action :attack} :requires #{"Spoils"}}
+   {:name "Poor House" :types #{:action}}
+   {:name "Procession" :types #{:action}}
+   {:name "Rats" :types #{:action}}
+   {:name "Rebuild" :types #{:action}}
+   {:name "Rogue" :types #{:action :attack}}
+   {:name "Ruins" :types #{:action :ruins} :core :ruins}
+   {:name "Sage" :types #{:action}}
+   {:name "Scavenger" :types #{:action}}
+   {:name "Shelters" :types #{:shelter} :core :shelters}
+   {:name "Spoils" :types #{:treasure} :supply false}
+   {:name "Squire" :types #{:action}}
+   {:name "Storeroom" :types #{:action}}
+   {:name "Urchin/Knights" :types #{:action :attack}}
+   {:name "Vagrant" :types #{:action}}
+   {:name "Wandering Minstrel" :types #{:action}}}}
