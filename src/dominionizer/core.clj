@@ -120,7 +120,7 @@
 
 (def standard-rules
   {:total 10
-   :minimums {:alchemy 3
+   :minimums {"Alchemy" 3
               :default 0}
    :expansions (disj (set (keys expansions)) "Promo")
    :expansion-count 2
