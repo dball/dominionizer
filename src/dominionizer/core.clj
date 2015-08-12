@@ -123,12 +123,13 @@
    :minimums {"Alchemy" 3
               :default 0}
    :expansions (disj (set (keys expansions)) "Promo")
-   :expansion-count 2
+   :expansion-counts #{2 3}
    :cores #{true}})
 
 (defn randomize
   [rules]
-  (let [{:keys [total minimums cores expansions expansion-count]} rules
+  (let [{:keys [total minimums cores expansions expansion-counts]} rules
+        expansion-count (rand-nth (seq expansion-counts))
         expansions (choose expansion-count expansions)
         samples (sample-from-expansions total minimums expansions)
         cores (sample-cores cores samples)
